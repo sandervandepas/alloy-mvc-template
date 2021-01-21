@@ -116,6 +116,9 @@
     <Reference Include="EPiServer.ImageLibrary, Version=11.14.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EPiServer.CMS.AspNet.11.14.2\lib\net461\EPiServer.ImageLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="EPiServer.Labs.BlockEnhancements, Version=0.9.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPiServer.Labs.BlockEnhancements.0.9.0\lib\net45\EPiServer.Labs.BlockEnhancements.dll</HintPath>
+    </Reference>
     <Reference Include="EPiServer.Licensing, Version=11.14.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EPiServer.Framework.11.14.2\lib\net461\EPiServer.Licensing.dll</HintPath>
     </Reference>
@@ -136,6 +139,9 @@
     </Reference>
     <Reference Include="EPiServer.Shell.UI, Version=11.23.8.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EPiServer.CMS.UI.Core.11.23.8\lib\net461\EPiServer.Shell.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Telemetry.UI, Version=1.0.6.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPiServer.Telemetry.UI.Core.1.0.6\lib\net45\EPiServer.Telemetry.UI.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.UI, Version=11.23.8.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EPiServer.CMS.UI.Core.11.23.8\lib\net461\EPiServer.UI.dll</HintPath>
@@ -294,6 +300,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Compile Include="Business\AdministratorRegistrationPage.cs" />
+    <Compile Include="Business\Attributes\MinMaxAttribute.cs" />
     <Compile Include="Business\Channels\DisplayResolutionBase.cs" />
     <Compile Include="Business\Channels\DisplayResolutions.cs" />
     <Compile Include="Business\Channels\MobileChannel.cs" />
@@ -306,6 +313,8 @@
     <Compile Include="Business\Initialization\FilterConfig.cs" />
     <Compile Include="Business\Initialization\ExtendedTinyMceInitialization.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Models\Blocks\OnPageNavigationBlock.cs" />
+    <Compile Include="Models\Blocks\SubBlocks\OnPageNavigationItem.cs" />
     <Compile Include="Models\Pages\ISearchPage.cs" />
     <Compile Include="Business\PageViewContextFactory.cs" />
     <Compile Include="Business\Rendering\ErrorHandlingContentRenderer.cs" />
@@ -455,6 +464,10 @@
     <Content Include="modules\_protected\CMS\CMS.zip" />
     <Content Include="modules\_protected\EPiServer.Cms.TinyMce\web.config" />
     <Content Include="modules\_protected\EPiServer.Cms.TinyMce\EPiServer.Cms.TinyMce.zip" />
+    <Content Include="modules\_protected\episerver-telemetry-ui\web.config" />
+    <Content Include="modules\_protected\episerver-telemetry-ui\episerver-telemetry-ui.zip" />
+    <Content Include="modules\_protected\episerver-labs-block-enhancements\web.config" />
+    <Content Include="modules\_protected\episerver-labs-block-enhancements\episerver-labs-block-enhancements.zip" />
     <None Include="Views\_ReadMe.txt" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
